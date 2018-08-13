@@ -380,7 +380,6 @@ class Trainer(object):
         return gen(batch_size)
 
     def _build_roots(self, X, y, weights):
-        assert isinstance(X, list) and isinstance(X[0], sp.csr_matrix), "Requires list of csr_matrix"
         if self.n_jobs > 1:
             f = fork_call(self.grow_root)
         else:
